@@ -1,0 +1,14 @@
+{
+  "name": "javascript",
+  "version": "1.0.0",
+  "description": "",
+  "main": "Kobalt_takehome.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "jest": "^28.1.3"
+  }
+}
