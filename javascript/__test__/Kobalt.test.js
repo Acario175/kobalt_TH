@@ -58,7 +58,7 @@ describe('Kobalt_FINPR_197', () => {
   });
   it('Checking Transaction deductions', (done) => {
     account.deductTransaction(transactions);
-    expect(account.balance).toBe(70);
+    expect(account.balance).toBe(80);
     done();
   });
 });

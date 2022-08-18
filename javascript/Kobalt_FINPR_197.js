@@ -13,12 +13,14 @@ class UserAccount {
         this.active &&
         transactions[idx].amount <= this.balance
       ) {
-        if (!this.transactions[2]) {
+        if (!this.transactions[1]) {
           this.transactions.unshift(transactions[idx]);
           this.balance -= transactions[idx].amount;
         } else if (
-          transactions[idx].timestamp - this.transactions[2].timestamp > 5 &&
-          this.transactions[2]
+          transactions[idx].timestamp - this.transactions[1].timestamp >
+          5
+          //   &&
+          //   this.transactions[1]
         ) {
           this.transactions.unshift(transactions[idx]);
           this.balance -= transactions[idx].amount;
