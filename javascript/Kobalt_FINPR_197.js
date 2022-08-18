@@ -8,6 +8,7 @@ class UserAccount {
 
   deductTransaction(transactions) {
     for (let idx in transactions) {
+      // Verify Account Cred.
       if (
         this.account_id === transactions[idx].account_id &&
         this.active &&

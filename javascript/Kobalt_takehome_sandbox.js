@@ -23,6 +23,9 @@ class UserAccount {
         ) {
           this.transactions.unshift(transactions[idx]);
           this.balance -= transactions[idx].amount;
+        } else {
+          console.log(idx);
+          return 'Transaction Error';
         }
       }
     }
