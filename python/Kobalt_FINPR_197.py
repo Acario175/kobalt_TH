@@ -7,7 +7,7 @@ class UserAccount:
 
   def deductTransaction(this,transactions):
    for transaction in transactions:
-        print(transaction)
+        # print(transaction)
         if (this.account_id == transaction.account_id and this.active and transaction.amount <= this.balance):
             if (~this.accountTransactions[1]):
                 this.accountTransactions.unshift(transaction)
