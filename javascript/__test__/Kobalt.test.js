@@ -37,7 +37,7 @@ describe('Kobalt_FINPR_197', () => {
     });
   });
 
-  it('Create New Account', (done) => {
+  it('Check  created account', (done) => {
     expect(account.account_id).toBe('Karen');
     expect(account.balance).toBe(100);
     expect(account.active).toBe(true);

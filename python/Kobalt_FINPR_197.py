@@ -6,19 +6,22 @@ class UserAccount:
     this.accountTransactions = []
 
   def deductTransaction(this,transactions):
-   for transaction in transactions:
-        # print(transaction)
-        if (this.account_id == transaction.account_id and this.active and transaction.amount <= this.balance):
-            if (~this.accountTransactions[1]):
-                this.accountTransactions.unshift(transaction)
-                this.balance -= transaction.amount
-            elif (transaction.timestamp - this.accountTransactions[1].timestamp > 5 ) :
-                this.accountTransactions.unshift(transaction)
-                this.balance -= transaction.amount
+    print(transactions)
+    for transaction in transactions:
+        print(transaction)
+        if (this.account_id == transaction['account_id'] and this.active and transaction['amount'] <= this.balance):
+            if (len(this.accountTransactions)<2):
+                this.accountTransactions.insert(0,transaction)
+                this.balance -= transaction['amount']
+            elif (transaction['timestamp'] - this.accountTransactions[1]['timestamp'] > 5 ) :
+                this.accountTransactions.insert(0,transaction)
+                this.balance -= transaction['amount']
             else:
-                return 'Transaction Error'
-            
-      
+              print('Transaction Error')
+              return 'Transaction Error'
+        print(this.accountTransactions)
+
+                           
 
 # account1 =  UserAccount('Karen', 100, True)
 
