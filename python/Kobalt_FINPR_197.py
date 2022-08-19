@@ -6,29 +6,17 @@ class UserAccount:
     this.accountTransactions = []
 
   def deductTransaction(this,transactions):
-    print(transactions)
     for transaction in transactions:
-        print(transaction)
-        if (this.account_id == transaction['account_id'] and this.active and transaction['amount'] <= this.balance):
-            if (len(this.accountTransactions)<2):
-                this.accountTransactions.insert(0,transaction)
-                this.balance -= transaction['amount']
-            elif (transaction['timestamp'] - this.accountTransactions[1]['timestamp'] > 5 ) :
-                this.accountTransactions.insert(0,transaction)
-                this.balance -= transaction['amount']
-            else:
-              print('Transaction Error')
-              return 'Transaction Error'
-        print(this.accountTransactions)
-
-                           
-
-# account1 =  UserAccount('Karen', 100, True)
-
-# print(account1.account_id)
-# account1.deductTransaction(["apple", "banana", "cherry",{
-#   'transaction_id': '1231',
-#   'account_id': 'Karen',
-#   'amount': 10,
-#   'timestamp': 27679677,
-# }])
+      # Verify Account Cred.
+      if (this.account_id == transaction['account_id'] and this.active and transaction['amount'] <= this.balance):
+        # Checks how many transactions in list
+        if (len(this.accountTransactions) < 2):
+          this.accountTransactions.insert(0,transaction)
+          this.balance -= transaction['amount']
+        # Compares 3rd item's timestamp to current  transaction timestamp 
+        elif (transaction['timestamp'] - this.accountTransactions[1]['timestamp'] > 5 ) :
+          this.accountTransactions.insert(0,transaction)
+          this.balance -= transaction['amount']
+        else:
+          print('Transaction Error')
+          return 'Transaction Error'

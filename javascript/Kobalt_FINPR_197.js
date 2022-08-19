@@ -14,14 +14,15 @@ class UserAccount {
         this.active &&
         transactions[idx].amount <= this.balance
       ) {
-        if (!this.transactions[1]) {
+        // Checks how many transactions
+        if (this.transactions.length < 2) {
           this.transactions.unshift(transactions[idx]);
           this.balance -= transactions[idx].amount;
-        } else if (
+        }
+        // Compares 3rd item's timestamp to current transaction timestamp
+        else if (
           transactions[idx].timestamp - this.transactions[1].timestamp >
           5
-          //   &&
-          //   this.transactions[1]
         ) {
           this.transactions.unshift(transactions[idx]);
           this.balance -= transactions[idx].amount;
