@@ -13,10 +13,12 @@ class UserAccount:
         if (len(this.accountTransactions) < 2):
           this.accountTransactions.insert(0,transaction)
           this.balance -= transaction['amount']
-        # Compares 3rd item's timestamp to current  transaction timestamp 
+        # Compares 2nd item's timestamp to current  transaction timestamp 
         elif (transaction['timestamp'] - this.accountTransactions[1]['timestamp'] > 5 ) :
           this.accountTransactions.insert(0,transaction)
           this.balance -= transaction['amount']
         else:
           print('Transaction Error')
-          return 'Transaction Error'
+          # return 'Transaction Error'
+          continue
+    return this.accountTransactions

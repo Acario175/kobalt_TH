@@ -25,13 +25,13 @@ class Kobalt_FINPR_197_Testing(unittest.TestCase):
       'timestamp': 27679679,
     },
         {
-      'transaction_id': '1232',
+      'transaction_id': '1233',
       'account_id': 'Karen',
       'amount': 10,
       'timestamp': 27679679,
     },
         {
-      'transaction_id': '1232',
+      'transaction_id': '1234',
       'account_id': 'Karen',
       'amount': 10,
       'timestamp': 27679689,
@@ -42,8 +42,9 @@ class Kobalt_FINPR_197_Testing(unittest.TestCase):
         self.assertEqual('Karen',self.account1.account_id)
 
     def test_Check_Balance(self):
-        self.account1.deductTransaction(self.transactions)
-        self.assertEqual(80,self.account1.balance)
+        templst = self.account1.deductTransaction(self.transactions)
+        self.assertEqual(70,self.account1.balance)
+        self.assertEqual(3,len(templst))
     
 
 if __name__ == '__main__':

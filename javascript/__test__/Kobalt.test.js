@@ -1,6 +1,6 @@
 const UserAccount = require('../Kobalt_FINPR_197');
 
-describe('Kobalt_FINPR_197', () => {
+describe('Kobalt_FINPR_OpenAcc', () => {
   let account;
   const transactions = [];
   beforeAll(() => {
@@ -56,14 +56,16 @@ describe('Kobalt_FINPR_197', () => {
     expect(account.balance).toBe(100);
     done();
   });
+
   it('Checking Transaction deductions', (done) => {
-    account.deductTransaction(transactions);
+    let templst = account.deductTransaction(transactions);
     expect(account.balance).toBe(80);
+    expect(templst.length).toBe(2);
     done();
   });
 });
 
-describe('Kobalt_FINPR_closedAcc', () => {
+describe('Kobalt_FINPR_ClosedAcc', () => {
   let account;
   const transactions = [];
   beforeAll(() => {
